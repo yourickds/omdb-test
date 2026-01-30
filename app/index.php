@@ -5,7 +5,9 @@ require_once 'OmdbService.php';
 function run(): array
 {
     $service = new OmdbService();
-    return $service->get();
+    $res = $service->get();
+    $map = $service->mapping($res);
+    return $service->getCollection($map);
 }
 
 header('Content-type: application/json');

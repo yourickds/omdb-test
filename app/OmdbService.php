@@ -1,6 +1,6 @@
 <?php
-
-class OmdbService
+require_once 'MovieD.php';
+final class OmdbService
 {
     public function get(): array
     {
@@ -13,5 +13,37 @@ class OmdbService
         curl_close($ch);
 
         return json_decode($res, true);
+    }
+
+    public function mapping(array $data): array
+    {
+        $result = [];
+
+        foreach ($data['Search'] as $item) {
+            $result[] = [
+                'title' => $item['Title'],
+                'year' => $item['Year'],
+                'type' => $item['Type'],
+                'poster' => $item['Poster'],
+            ];
+        }
+
+        return $result;
+    }
+
+    public function getCollection(array $data): array
+    {
+        $movies = [];
+
+        foreach ($data as $item) {
+            $movies[] = new MovieD(
+                $item['title'],
+                $item['year'],
+                $item['type'],
+                $item['poster'],
+            );
+        }
+
+        return $movies;
     }
 }
