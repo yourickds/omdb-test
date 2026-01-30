@@ -1,0 +1,8 @@
+services:
+  app:
+    image: docker.io/php:8.2-apache
+    container_name: astro7
+    volumes:
+      - "./app:/var/www/html"
+    ports:
+      - "8080:80"
