@@ -1,6 +1,7 @@
 <?php
 require_once 'MovieD.php';
-final class OmdbService
+require_once 'IMovies.php';
+final class OmdbService implements IMovies
 {
     public function get(): array
     {
