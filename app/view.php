@@ -46,8 +46,8 @@
                     <dialog class="card">
                         <img src="<?= $item->poster ?>" alt="poster">
                         <h3><?= $item->title ?></h3>
-                        <p><?= $item->year ?>, Жанр</p>
-                        <p>Описание Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, nam!</p>
+                        <p><?= $item->year ?>, <?= $item->genre ?></p>
+                        <p><?= $item->description ?></p>
 
                         <button class="card_close">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
