@@ -1,0 +1,126 @@
+:root {
+    --font-family: "Inter", sans-serif;
+    --second-family: "Impact", sans-serif;
+    --third-family: "Cormorant Garamond", sans-serif;
+    --font3: "Futura", sans-serif;
+    --font4: "Champagne & Limousines", sans-serif;
+    --font5: "Oswald", sans-serif;
+    --font6: "SF Pro Text", sans-serif;
+}
+
+body {
+    background-color: #000000;
+    max-width: 1340px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+
+.banner {
+    margin-bottom: 107px;
+}
+
+.banner h1 {
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 112px;
+    line-height: 98%;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 32px 0;
+}
+
+.banner p:first-of-type {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: 0.03em;
+    color: #fff;
+    margin: 32px 0;
+}
+
+.banner p:last-of-type {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 30px;
+    letter-spacing: 0.04em;
+    color: #fff;
+}
+
+.banner p:last-of-type:before {
+    content: "";
+    background: #f2455e;
+    width: 38px;
+    height: 6px;
+    display: block;
+    margin-bottom: 32px;
+}
+
+.items {
+
+}
+
+.items__item {
+    position: relative;
+    height: 900px;
+    border-radius: 8px;
+    overflow: hidden;
+
+    margin-bottom: 60px;
+}
+
+.items__item_bg {
+
+}
+
+.items__item_bg img {
+    width: 100%;
+    height: 900px;
+    object-fit: contain;
+}
+
+.items__item_info {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    width: 407px;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+.items__item_info h3 {
+    font-family: var(--font4);
+    font-weight: 700;
+    font-size: 48px;
+    color: #ff61ed;
+    margin: 0 0 20px 0;
+}
+
+.items__item_info p {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 20px;
+    color: #fff;
+    margin: 20px 0;
+}
+
+.items__item_info button {
+    width: 100%;
+
+    backdrop-filter: blur(4px);
+    background: #e42652;
+
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 20px;
+    color: #fff;
+
+    border-radius: 12px;
+    padding: 12px 20px;
+
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
