@@ -15,5 +15,13 @@ function run(): array
     return $service->getCollection($res);
 }
 
-header('Content-type: application/json');
-echo json_encode(run());
+function render(array $collection = []): string
+{
+    ob_start();
+    include 'view.php';
+    return ob_get_clean();
+}
+
+
+header('Content-type: text/html; charset=utf-8');
+echo render(run());
