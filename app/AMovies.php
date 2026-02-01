@@ -11,6 +11,9 @@ abstract class AMovies implements IMovies
         $this->mapping = $data;
     }
 
+    /**
+     * @return array<MovieD>
+     */
     public function getCollection(array $data): array
     {
         $movies = [];
