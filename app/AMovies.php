@@ -4,7 +4,7 @@ abstract class AMovies implements IMovies
 {
     private array $mapping;
 
-    abstract public function get(): array;
+    abstract public function get(string $search): array;
 
     public function setMapping(array $data): void
     {

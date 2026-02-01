@@ -2,7 +2,7 @@
 
 interface IMovies
 {
-    public function get(): array;
+    public function get(string $search): array;
 
     public function setMapping(array $data): void;
 

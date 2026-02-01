@@ -16,6 +16,43 @@ body {
     justify-self: center;
 }
 
+.search {
+    margin-top: 40px;
+    form {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-gap: 10px;
+    }
+    input[type="text"] {
+        font-size: 20px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        min-width: 100px;
+    }
+
+    input[type="submit"] {
+        backdrop-filter: blur(4px);
+        background: #e42652;
+
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 20px;
+        color: #fff;
+
+        border-radius: 12px;
+        padding: 12px 20px;
+
+        cursor: pointer;
+        text-decoration: none;
+        outline: none;
+        border: none;
+        box-sizing: border-box;
+    }
+}
+
 .banner {
     margin-bottom: 107px;
 }
@@ -58,6 +95,11 @@ body {
 
 .items {
 
+}
+
+.items h3 {
+    color: #ff61ed;
+    font-size: 48px;
 }
 
 .items__item {
