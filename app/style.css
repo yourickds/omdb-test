@@ -125,6 +125,61 @@ body {
     border: none;
 }
 
+.card {
+    border: 0.50px solid rgba(0, 0, 0, 0);
+    border-radius: 18px;
+    padding: 8px 16px;
+    max-width: 359px;
+    position: relative;
+}
+
+.card img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 14px;
+    max-width: 200px;
+}
+
+.card h3 {
+    font-family: var(--third-family);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 46px;
+    text-align: center;
+    color: #e42652;
+    margin: 8px 0;
+}
+
+.card p:first-of-type {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 120%;
+    text-align: center;
+    color: #000;
+    margin: 8px 0;
+}
+
+.card p:last-of-type {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    text-align: center;
+    color: #404040;
+    margin: 0;
+}
+
+.card_close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+}
+
 @media (max-width: 1339px) {
     .banner {
         margin-bottom: 50px;
