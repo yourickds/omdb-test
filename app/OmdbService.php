@@ -1,25 +1,17 @@
 <?php
-require_once 'AMovies.php';
-final class OmdbService extends AMovies
+require_once 'IMovies.php';
+require_once 'MovieD.php';
+final class OmdbService implements IMovies
 {
     private const URL = 'https://www.omdbapi.com';
     private const API_KEY = 'eade8a29'; // Необходимо в будущем вынести в env для безопасности
-    public function __construct()
-    {
-        $this->setMapping([
-            'title' => 'Title',
-            'year' => 'Year',
-            'type' => 'Type',
-            'poster' => 'Poster',
-            'genre' => 'Genre',
-            'description' => 'Plot',
-        ]);
-    }
+
+    private array $data = [];
 
     /**
      * @throws Exception
      */
-    public function get(string $search): array
+    public function find(string $search): self
     {
         $params = [
             'apikey' => self::API_KEY,
@@ -47,7 +39,9 @@ final class OmdbService extends AMovies
             $movies[] = $this->getInfoMovie($item['imdbID']);
         }
 
-        return $movies;
+        $this->data = $movies;
+
+        return $this;
     }
 
     private function getInfoMovie(string $id): array
@@ -66,5 +60,27 @@ final class OmdbService extends AMovies
         curl_close($ch);
 
         return json_decode($res, true);
+    }
+
+    /**
+     * @return array<MovieD>
+     */
+    public function get(): array
+    {
+        $movies = [];
+        foreach ($this->data as $item) {
+            $movie = [];
+
+            $movie['title'] = $item['Title'];
+            $movie['year'] = (int) $item['Year'];
+            $movie['type'] = $item['Type'];
+            $movie['poster'] = $item['Poster'];
+            $movie['genre'] = $item['Genre'];
+            $movie['description'] = $item['Plot'];
+
+            $movies[] = new MovieD(...$movie);
+        }
+
+        return $movies;
     }
 }

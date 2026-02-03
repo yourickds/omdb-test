@@ -2,12 +2,10 @@
 
 interface IMovies
 {
-    public function get(string $search): array;
-
-    public function setMapping(array $data): void;
+    public function find(string $search): self;
 
     /**
      * @return array<MovieD>
      */
-    public function getCollection(array $data): array;
+    public function get(): array;
 }

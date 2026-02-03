@@ -12,12 +12,11 @@ function run(string $search): array
     $service = $container->make(IMovies::class);
 
     try {
-        $res = $service->get($search);
+        return $service->find($search)->get();
     } catch (Exception $e) {
         echo render(error: $e->getMessage());
         exit;
     }
-    return $service->getCollection($res);
 }
 
 function render(array $collection = [], string $error = null): string
